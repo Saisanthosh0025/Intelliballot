@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #65cdf6 0%, #fda085 100%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            transition: transform 0.6s ease;
+        }
+
+        .login-container:hover {
+            transform: translateY(-5px);
+        }
+        .login-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #333333;
+        }
+
+        .login-container label {
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+            color: #666666;
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .login-container input[type="text"]:hover,
+        .login-container input[type="text"]:focus,
+        .login-container input[type="password"]:hover,
+        .login-container input[type="password"]:focus {
+            border-color: #3498db;
+        }
+
+        .login-container input[type="submit"] {
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-container input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        .login-container .error-message {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .login-container .error-message {
+            color: #e74c3c;
+            font-size: 16px;
+            margin-top: 15px;
+            padding: 8px 12px;
+            border: 2px solid #e74c3c;
+            border-radius: 8px;
+            background-color: #f8d7da;
+            opacity: 1; /* Initially visible */
+            animation: fadeOut 3s forwards; /* Apply fade out animation */
+        }
+
+        /* Keyframe animation to fade out */
+        @keyframes fadeOut {
+            0% { opacity: 1; } /* Start with full opacity */
+            50% { opacity: 1; } /* Stay visible for most of the duration */
+            100% { opacity: 0; } /* Fade out completely at the end */
+        }
+
+        .login-container .error-message.hide {
+            display: none; /* Hide the message when it's faded out */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Credentials</h2>
+        <form id="loginForm" action="/login" method="post">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required ><br>
+            {% if error_message %}
+            <p class="error-message">{{ error_message }}</p>
+        {% endif %}
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+</body>
+</html>
