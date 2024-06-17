@@ -8,4 +8,8 @@ step 4: after installing all modules you wont get any errors now . start executi
 step 5: entering 1 for face vote , 2 for finger vote. if u want to increment the total count u can put the count value in code and execute . once executed it cant repeat again .
 step 6: after completion enter 3 for exit . change the reciepient mail id in result.py file to get mails to you mail id .
 Hola ..... the result start now open browser and enter localhost:5000 enter the required credentials(if using in another device and using realvnc by raspberry pi use (,host="0.0.0.0") after debug=true  )
+
+project introduction video : https://drive.google.com/file/d/1K-E_Di1kcGr1juCHZF4DCUhOvfYF239I/view
+project output video : https://drive.google.com/file/d/1eGLw5yrYPB6wOFK48kC4N6vpBP2kmxui/view
+
  
